@@ -1,0 +1,156 @@
+/* add_pet */
+/* Scope everything under .add-pet-page */
+.add-pet-page * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.add-pet-page {
+  background: linear-gradient(135deg, #cce7ff, #99d6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+}
+
+.add-pet-page .form-frame {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  max-width: 900px;
+  width: 100%;
+}
+
+.add-pet-page h1 {
+  text-align: center;
+  color: #0077cc;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* 2-column layout */
+.add-pet-page .form-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.add-pet-page .form-fields {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-pet-page .form-fields .form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.add-pet-page .form-fields .form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-pet-page label {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #005f99;
+}
+
+.add-pet-page input[type="text"],
+.add-pet-page input[type="number"],
+.add-pet-page input[type="file"],
+.add-pet-page textarea {
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid #d0e6f7;
+  font-size: 16px;
+  background: #e6f2ff;
+  transition: all 0.3s ease;
+}
+
+.add-pet-page input:focus,
+.add-pet-page textarea:focus {
+  border-color: #0077cc;
+  box-shadow: 0 0 10px rgba(0,119,204,0.3);
+  outline: none;
+}
+
+.add-pet-page textarea {
+  min-height: 120px;
+  resize: vertical;
+  flex: 1 1 100%;
+}
+
+.add-pet-page .form-image-preview {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.add-pet-page .image-preview {
+  width: 100%;
+  max-height: 400px;
+  background: #d0e6f7;
+  border: 2px dashed #0077cc;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0077cc;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.add-pet-page .image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  display: block;
+}
+
+.add-pet-page button {
+  width: 100%;
+  padding: 18px;
+  border-radius: 20px;
+  background: #0077cc;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.add-pet-page button:hover {
+  background: #005f99;
+  transform: translateY(-3px);
+}
+
+/* Responsive for mobile */
+@media (max-width: 800px) {
+  .add-pet-page .form-content {
+    flex-direction: column;
+  }
+
+  .add-pet-page .form-fields,
+  .add-pet-page .form-image-preview {
+    flex: 1 1 100%;
+  }
+}
+

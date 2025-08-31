@@ -1,47 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PawPrint - Login</title>
-  <link rel="stylesheet" href="/css/user_login.css">
+  <link rel="stylesheet" href="/Hackathon/css/user_login.css" />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
 </head>
 <body class="login-page">
-  <div class="login-page page-wrapper">
-    <div class="login-content">
-      <!-- Left column: welcome message -->
-      <div class="welcome-column">
-        <h1>Welcome Back!</h1>
-        <p>Log in to your PawPrint account and continue helping pets find loving homes.</p>
-      </div>
 
-      <!-- Right column: login form -->
-      <div class="form-column">
-        <div class="form-frame">
-          <h1>Login</h1>
-          <form id="loginForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <h1 class="site-title">PawPal</h1>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="adopt.html">ADOPT</a></li>
+        <li><a href="volunteer.html">VOLUNTEER</a></li>
+        <li><a href="donate.html">DONATE</a></li>
+        <li><a href="emergency.html" class="emergency-btn">EMERGENCY</a></li>
+      </ul>
+    </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <!-- LOGIN PAGE CONTENT -->
+  <main>
+    <div class="login-page page-wrapper">
+      <div class="login-content">
+        <div class="welcome-column">
+          <h1>Welcome Back!</h1>
+          <p>Log in to your PawPal account and continue helping pets find loving homes.</p>
+        </div>
+
+        <div class="form-column">
+          <div class="form-frame">
+            <h1>Login</h1>
+            <form id="loginForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
               </div>
-            </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                  />
+                </div>
               </div>
-            </div>
 
-            <button type="submit">Login</button>
-            <p class="signup-link">
-              Don't have an account? <a href="/html/user_signup.html">Sign up</a>
-            </p>
-          </form>
+              <button type="submit">Login</button>
+              <p class="signup-link">
+                Don't have an account? <a href="/Hackathon/html/user_signup.html">Sign up</a>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-copyright">
+      &copy; 2025 PawPal. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
 </body>
 </html>

@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawPal</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/Hackathon/css/adopt.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <title>Philarite</title>
 </head>
 <body>
-    <section class="header1">
-        <nav>
-            
-            <header>
-                <div class="logo-container">
-                    <img src="images/logo.png" alt="Logo" class="logo">
-                    <h1 class="site-title">PawPal</h1>
-                    
-                </div>
-            </header>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i> 
-                <ul>
+    <nav>
+        <header>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <h1 class="site-title">PawPal</h1>
+            </div>
+        </header>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i> 
+            <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="adopt.html">ADOPT</a></li>
                     <li><a href="volunteer.html">VOLUNTEER</a></li>
@@ -32,58 +28,74 @@
                     <li><a  href="emergency.html" class="emergency-btn">EMERGENCY</a></li>
                     
                 </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <body class="signup-page">
+  <div class="signup-page page-wrapper">
+    <div class="signup-content">
+      <!-- Left column: welcome message -->
+      <div class="welcome-column">
+        <h1>Welcome to PawPal!</h1>
+        <p>Join our community and help pets find loving homes. Sign up now and start your journey with us!</p>
+      </div>
+
+      <!-- Right column: signup form -->
+      <div class="form-column">
+        <div class="form-frame">
+          <h1>Create Your Account</h1>
+          <form id="signupForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-        <div class="text-box">
-            <h1>Welcome to PawPal</h1>
-            <h2>Where every paw meets a pal!</h2>
-            <p></p>
-            <a href="#contact" class="hero-btn">Start Exploring!</a>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+              </div>
+            </div>
+
+            <button type="submit">Sign Up</button>
+            <p class="login-link">
+              Already have an account? <a href="/Hackathon/html/user_login.html">Login now</a>
+            </p>
+          </form>
         </div>
-    </section>
-    <body onload="showmodal()">
-        
-        
-            
-           
-        </body>
-<!---------------Javascript for Toggle Menu---------->
-    </section>
-    
-    
-    
-      
-      
-        
-            
+      </div>
+    </div>
    
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+  </div>
+</body>
     
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
     
-    <!-------footer ---------->
-    <section class="footer" id="contact">
-        
-        
+    
         <div class="footer-copyright">
-                &copy; 2025 PawPal. All rights reserved.
+            &copy; 2025 PawPal. All rights reserved.
         </div>
     </section>
+
     <script>
-        
         var navLinks = document.getElementById("navLinks");
 
         function showMenu() {
@@ -93,10 +105,6 @@
         function hideMenu() {
             navLinks.style.right = "-200px";
         }
-
     </script>
-
-    
- 
 </body>
 </html>

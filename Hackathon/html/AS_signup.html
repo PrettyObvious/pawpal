@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PawPrint - AS Sign Up</title>
-  <link rel="stylesheet" href="/css/AS_signup.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PawPal - Sign Up</title>
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/Hackathon/css/styles.css" />
+  <link rel="stylesheet" href="/Hackathon/css/AS_signup.css" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
-<body class="signup-page">
-  <div class="signup-page page-wrapper">
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <header>
+      <div class="logo-container">
+        <img src="/Hackathon/images/logo.png" alt="Logo" class="logo" />
+        <h1 class="site-title">PawPal</h1>
+      </div>
+    </header>
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="adopt.html">ADOPT</a></li>
+        <li><a href="volunteer.html">VOLUNTEER</a></li>
+        <li><a href="donate.html">DONATE</a></li>
+        <li><a href="emergency.html" class="emergency-btn">EMERGENCY</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <!-- SIGNUP SECTION -->
+  <section class="signup-page page-wrapper">
     <div class="signup-content">
       <!-- Left column: welcome message -->
       <div class="welcome-column">
-        <h1>Welcome, Animal Shelter!</h1>
+        <h1>Welcome to PawPal!</h1>
         <p>Create your account and start sharing your pets for adoption with our community.</p>
       </div>
 
@@ -57,12 +89,32 @@
 
             <button type="submit">Sign Up</button>
             <p class="login-link">
-              Already have an account? <a href="/html/AS_login.html">Login now</a>
+              Already have an account? <a href="/Hackathon/html/AS_login.html">Login now</a>
             </p>
           </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer" id="contact">
+    <div class="footer-copyright">
+      &copy; 2025 PawPal. All rights reserved.
+    </div>
+  </section>
+
+  <!-- JS for Navbar -->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
 </body>
 </html>
