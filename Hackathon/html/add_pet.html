@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PawPrint - Add Pet</title>
-  <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
+  <link rel="stylesheet" href="/css/add_pet.css" />
 </head>
 <body class="add-pet-page">
   <div class="add-pet-page page-wrapper">
@@ -64,22 +64,6 @@
     </div>
   </div>
 
-  <script>
-    const fileInput = document.querySelector('#image');
-    const preview = document.querySelector('#imagePreview');
-
-    fileInput.addEventListener('change', function() {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          preview.innerHTML = `<img src="${e.target.result}" alt="Pet Image">`;
-        }
-        reader.readAsDataURL(file);
-      } else {
-        preview.innerHTML = "No image selected";
-      }
-    });
-  </script>
+  <script src="/js/add_pet.js"></script>
 </body>
 </html>
