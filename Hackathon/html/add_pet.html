@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawPrint - Add Pet</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="add-pet-page">
+  <div class="add-pet-page page-wrapper">
+    <div class="form-frame">
+      <h1>Add a Pet for Adoption</h1>
+      <form id="petForm" enctype="multipart/form-data">
+        <div class="form-content">
+          <!-- Left column: form fields -->
+          <div class="form-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="shelter">Shelter Name</label>
+                <input type="text" id="shelter" name="shelter" placeholder="Enter your shelter name" required>
+              </div>
+              <div class="form-group">
+                <label for="animal">Animal Type</label>
+                <input type="text" id="animal" name="animal" placeholder="Dog, Cat..." required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Age in years" required>
+              </div>
+              <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Short Description</label>
+              <textarea id="description" name="description" placeholder="Enter a short description..." required></textarea>
+            </div>
+
+            <button type="submit">Post Pet</button>
+          </div>
+
+          <!-- Right column: image preview -->
+          <div class="form-image-preview">
+            <div class="image-preview" id="imagePreview">Image Preview</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const fileInput = document.querySelector('#image');
+    const preview = document.querySelector('#imagePreview');
+
+    fileInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.innerHTML = `<img src="${e.target.result}" alt="Pet Image" style="width:100%; height:100%; object-fit:cover; border-radius:14px;">`;
+        }
+        reader.readAsDataURL(file);
+      } else {
+        preview.innerHTML = "No image selected";
+      }
+    });
+  </script>
+</body>
+</html>
