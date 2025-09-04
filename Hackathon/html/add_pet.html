@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<<<<<<< HEAD
+
   <title>PawPal - Add Pet</title>
   <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
-=======
+
   <title>PawPrint - Add Pet</title>
   <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
->>>>>>> cd6512ef62361320267e5899c160b26e490cb1e9
+
 </head>
 <body class="add-pet-page">
   
@@ -27,9 +27,10 @@
           <div class="form-fields">
             <div class="form-row">
               <div class="form-group">
-                <label for="shelter">Shelter Name</label>
-                <input type="text" id="shelter" name="shelter" placeholder="Enter your shelter name" required />
-              </div>
+              <label for="pet">Name of Pet</label>
+              <input type="text" id="pet" name="pet" placeholder="Enter your pet's name" required />
+            </div>
+
               <div class="form-group">
                 <label for="animal">Animal Type</label>
                 <input type="text" id="animal" name="animal" placeholder="Dog, Cat..." required />
@@ -49,8 +50,8 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" placeholder="Age in years" required />
+                <label for="dob">Date of Birth*</label>
+                <input type="date" id="dob" name="dob" required>
               </div>
               <div class="form-group">
                 <label for="image">Upload Image</label>
@@ -80,6 +81,6 @@
     </div>
   </section>
 
-  <script src="/js/add_pet.js"></script>
+  <script src="/Hackathon/js/add_pet.js"></script>
 </body>
 </html>

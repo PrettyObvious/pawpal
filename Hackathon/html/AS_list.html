@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawPal</title>
-    <link rel="stylesheet" href="/Hackathon/css/AS_list.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawPal</title>
+  <link rel="stylesheet" href="/Hackathon/css/AS_list.css">
+  <link rel="stylesheet" href="/Hackathon/css/emergency.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Logo" class="logo">
-            <h1 class="site-title">PawPal</h1>
-        </div>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-          <li><a href="AS_list.html">EXPLORE</a></li>
-          <li>
-            <a href="emergency.html" class="emergency-btn">EMERGENCY</a>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Logo" class="logo">
+      <h1 class="site-title">PawPal</h1>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="AS_list.html">EXPLORE</a></li>
+         <li>
+            <a href="#" id="emergencyBtn" class="emergency-btn">EMERGENCY</a>
           </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
 
-    <!-- PAGE CONTENT -->
-    <main>
+  <!-- PAGE CONTENT -->
+  <main>
     <h2>Find Animal Shelters</h2>
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Enter shelter name or city...">
-        <button class="search-button" onclick="searchShelters()">Search</button>
+      <input type="text" id="searchInput" class="search-input" placeholder="Enter shelter name or city...">
+      <button class="search-button" onclick="searchShelters()">Search</button>
     </div>
 
     <!-- Dynamic Results -->
@@ -43,99 +44,109 @@
 
     <!-- Example static cards -->
     <div class="result-card">
-        <h3>Happy Paws Shelter</h3>
-        <p class="shelter-address">123 Main Street, Cape Town</p>
-        <div class="card-buttons">
-            <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
-            <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
-            <a href="donate.html" class="card-btn donate-btn">Donate</a>
-            <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
-        </div>
+      <h3>Happy Paws Shelter</h3>
+      <p class="shelter-address">123 Main Street, Cape Town</p>
+      <div class="card-buttons">
+        <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
+        <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
+        <a href="#" class="card-btn donate-btn" data-shelter="Happy Paws Shelter">Donate</a>
+        <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
+      </div>
     </div>
 
     <div class="result-card">
-        <h3>Furry Friends Haven</h3>
-        <p class="shelter-address">45 Dogwood Lane, Johannesburg</p>
-        <div class="card-buttons">
-            <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
-            <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
-            <a href="donate.html" class="card-btn donate-btn">Donate</a>
-            <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
-        </div>
+      <h3>Furry Friends Haven</h3>
+      <p class="shelter-address">45 Dogwood Lane, Johannesburg</p>
+      <div class="card-buttons">
+        <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
+        <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
+        <a href="#" class="card-btn donate-btn" data-shelter="Furry Friends Haven">Donate</a>
+        <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
+      </div>
     </div>
 
     <div class="result-card">
-        <h3>Purrfect Companions</h3>
-        <p class="shelter-address">78 Cat Street, Durban</p>
-        <div class="card-buttons">
-            <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
-            <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
-            <a href="donate.html" class="card-btn donate-btn">Donate</a>
-            <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
-        </div>
+      <h3>Purrfect Companions</h3>
+      <p class="shelter-address">78 Cat Street, Durban</p>
+      <div class="card-buttons">
+        <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
+        <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
+        <a href="#" class="card-btn donate-btn" data-shelter="Purrfect Companions">Donate</a>
+        <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
+      </div>
     </div>
 
     <div class="result-card">
-        <h3>Safe Paws Rescue</h3>
-        <p class="shelter-address">12 Elm Avenue, Pretoria</p>
-        <div class="card-buttons">
-            <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
-            <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
-            <a href="donate.html" class="card-btn donate-btn">Donate</a>
-            <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
-        </div>
+      <h3>Safe Paws Rescue</h3>
+      <p class="shelter-address">12 Elm Avenue, Pretoria</p>
+      <div class="card-buttons">
+        <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
+        <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
+        <a href="#" class="card-btn donate-btn" data-shelter="Safe Paws Rescue">Donate</a>
+        <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
+      </div>
     </div>
 
     <div class="result-card">
-        <h3>Tails & Whiskers Shelter</h3>
-        <p class="shelter-address">90 Oak Road, Port Elizabeth</p>
-        <div class="card-buttons">
-            <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
-            <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
-            <a href="donate.html" class="card-btn donate-btn">Donate</a>
-            <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
-        </div>
+      <h3>Tails & Whiskers Shelter</h3>
+      <p class="shelter-address">90 Oak Road, Port Elizabeth</p>
+      <div class="card-buttons">
+        <a href="adopt.html" class="card-btn adopt-btn">Adopt a Pet</a>
+        <a href="give.html" class="card-btn give-btn">Give a Pet for Adoption</a>
+        <a href="#" class="card-btn donate-btn" data-shelter="Tails & Whiskers Shelter">Donate</a>
+        <a href="volunteer.html" class="card-btn volunteer-btn">Volunteer</a>
+      </div>
     </div>
-</main>
 
+    <!-- DONATE MODAL -->
+<div id="donateModal" class="modal">
+  <div class="modal-content">
+    <span class="donate-close">&times;</span>
+    <h2>Donation Information</h2>
+    <p id="donationDetails">Loading...</p>
+  </div>
+</div>
 
-    <!-- FOOTER -->
-    <footer>
-        &copy; 2025 PawPal. All rights reserved.
-    </footer>
+    <!-- Emergency Modal -->
+  <div id="emergencyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Report Animal Emergency</h2>
+      <form id="emergencyForm">
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" placeholder="Enter address or coordinates" required>
 
-    <!-- SCRIPTS -->
-    <script>
-        // NAV MENU
-        var navLinks = document.getElementById("navLinks");
-        function showMenu() { navLinks.style.right = "0"; }
-        function hideMenu() { navLinks.style.right = "-200px"; }
+  <label for="type">Type of Emergency:</label>
+  <select id="type" name="type" required>
+    <option value="">Select...</option>
+    <option value="injured">Injured Animal</option>
+    <option value="lost">Lost Animal</option>
+    <option value="dangerous">Dangerous Situation</option>
+  </select>
 
-        // SEARCH SHELTERS - DYNAMIC CARDS
-        async function searchShelters() {
-            const query = document.getElementById("searchInput").value;
-            const response = await fetch(`/search?query=${encodeURIComponent(query)}`);
-            const shelters = await response.json();
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" placeholder="Provide details..." required></textarea>
 
-            const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = ""; // clear previous results
+  <label for="contact">Your Contact:</label>
+  <input type="text" id="contact" name="contact" placeholder="Phone or email" required>
 
-            shelters.forEach(s => {
-                const card = document.createElement("div");
-                card.classList.add("result-card");
-                card.innerHTML = `
-                    <h3>${s.name}</h3>
-                    <p class="shelter-address">${s.address}</p>
-                    <div class="card-buttons">
-                        <a href="adopt.html?shelter_id=${s.id}" class="card-btn adopt-btn">Adopt a Pet</a>
-                        <a href="give.html?shelter_id=${s.id}" class="card-btn give-btn">Give a Pet for Adoption</a>
-                        <a href="donate.html?shelter_id=${s.id}" class="card-btn donate-btn">Donate</a>
-                        <a href="volunteer.html?shelter_id=${s.id}" class="card-btn volunteer-btn">Volunteer</a>
-                    </div>
-                `;
-                resultsDiv.appendChild(card);
-            });
-        }
-    </script>
+  <label for="image">Upload Image:</label>
+  <input type="file" id="image" name="image" accept="image/*" required>
+
+  <img id="imagePreview" src="#" alt="Image Preview" style="display:none; width: 100px; height: 100px; object-fit: cover; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+  <button type="submit">Send Alert</button>
+</form>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 PawPal. All rights reserved.
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="/Hackathon/js/donate.js"></script>
+  <script src="/Hackathon/js/emergency.js"></script>
 </body>
 </html>

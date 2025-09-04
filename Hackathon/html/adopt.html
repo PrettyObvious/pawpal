@@ -11,26 +11,12 @@
     <title>PawPal</title>
 </head>
 <body>
-    <nav>
-        <header>
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Logo" class="logo">
-                <h1 class="site-title">PawPal</h1>
-            </div>
-        </header>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i> 
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-          <li><a href="AS_list.html">EXPLORE</a></li>
-          <li>
-            <a href="emergency.html" class="emergency-btn">EMERGENCY</a>
-          </li>
-            </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
+    
 
+<!-- Top bar with Back button -->
+  <div class="top-bar">
+    <a href="/Hackathon/html/AS_list.html" class="back-btn">Back to Shelter List</a>
+  </div>
     <main class="adopt-section">
         <h2>Animals Available for Adoption</h2>
         <div class="card-container">
@@ -79,7 +65,7 @@
                     <a href="adopt-form.html" class="adopt-btn">Adopt</a>
                 </div>
             </div>
-<<<<<<< HEAD
+
             <div class="animal-card">
                 <img src="/Hackathon/images/headerimage2.jpg" alt="Thumper" class="animal-image">
                 <div class="animal-info">
@@ -102,15 +88,8 @@
                     <a href="adopt-form.html" class="adopt-btn">Adopt</a>
                 </div>
             </div>
-            <!-- Add more cards as needed -->
-=======
 
-            <button type="submit">Sign Up</button>
-            <p class="login-link">
-              Already have an account? <a href="/html/user_login.html">Login now</a>
-            </p>
-          </form>
->>>>>>> cd6512ef62361320267e5899c160b26e490cb1e9
+
         </div>
     </main>
 
@@ -118,14 +97,14 @@
         &copy; 2025 PawPal. All rights reserved.
     </div>
 
-<<<<<<< HEAD
+
     <script>
         var navLinks = document.getElementById("navLinks");
         function showMenu() { navLinks.style.right = "0"; }
         function hideMenu() { navLinks.style.right = "-200px"; }
     </script>
-=======
-    <script src="/js/adopt.js"></script>
->>>>>>> cd6512ef62361320267e5899c160b26e490cb1e9
+
+    <script src="/Hackathon/js/adopt.js"></script>
+
 </body>
 </html>

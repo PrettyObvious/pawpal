@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff4e6, #ffe0cc) !important;
+  
+  background-size: 20px 20px !important;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.volunteer-form-section {
+  background: #ffffff;
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  border: 2px solid #f4e1d2; /* light brown accent */
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #a0522d; /* sienna brown */
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #5c4033;
+}
+
+fieldset {
+  border: 2px solid #f4e1d2;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: #fffdf9;
+}
+
+legend {
+  font-weight: bold;
+  color: #d2691e; /* chocolate */
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  color: #4a3f35;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #d8b89f;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fffaf5;
+  transition: 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #f57c00; /* orange highlight */
+  outline: none;
+  box-shadow: 0 0 5px rgba(245,124,0,0.5);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.8rem 0;
+}
+
+.checkbox-group label {
+  background: #fdf2e9;
+  border: 1px solid #f4d4b4;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkbox-group label:hover {
+  background: #fbe0c4;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+/* Submit button */
+.submit-btn {
+  background: #f57c00; /* orange */
+  color: white;
+}
+
+.submit-btn:hover {
+  background: #e86800;
+}
+
+/* Back button */
+.back-btn {
+  background: #d8b89f;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  background: #a0522d;
+}

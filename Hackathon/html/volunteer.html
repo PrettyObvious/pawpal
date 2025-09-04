@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/adopt.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>PawPal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer Application</title>
+  <link rel="stylesheet" href="/Hackathon/css/volunteer.css">
 </head>
 <body>
-    <nav>
-        <header>
-            <div class="logo-container">
-                <img src="images/logo.png" alt="Logo" class="logo">
-                <h1 class="site-title">PawPal</h1>
-            </div>
-        </header>
-        <div class="nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i> 
-            <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="adopt.html">ADOPT</a></li>
-                    <li><a href="volunteer.html">VOLUNTEER</a></li>
-                    <li><a href="donate.html">DONATE</a></li>
-                    <li><a  href="emergency.html" class="emergency-btn">EMERGENCY</a></li>
-                    
-                </ul>
-        </div>
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
-    <br>
-    <br>
-    <br>
-    
-    
-    
-        <div class="footer-copyright">
-            &copy; 2025 PawPal. All rights reserved.
-        </div>
-    </section>
+  <section class="volunteer-form-section">
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">← Back</button>
 
-    <script src="/js/volunteer.js"></script>
+    <h1>Volunteer Application Form</h1>
+    <p>Please complete the form below to apply as a volunteer at our shelter.</p>
+
+    <form action="submit_volunteer.php" method="POST">
+
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="firstName">First Name*</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name*</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="dob">Date of Birth*</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="phone">Phone Number*</label>
+        <input type="tel" id="phone" name="phone" placeholder="+27 12 345 6789" required>
+
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Address*</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </fieldset>
+
+      <!-- Availability -->
+      <fieldset>
+        <legend>Availability</legend>
+        <label>Which days are you available?*</label><br>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="days[]" value="Monday"> Monday</label>
+          <label><input type="checkbox" name="days[]" value="Tuesday"> Tuesday</label>
+          <label><input type="checkbox" name="days[]" value="Wednesday"> Wednesday</label>
+          <label><input type="checkbox" name="days[]" value="Thursday"> Thursday</label>
+          <label><input type="checkbox" name="days[]" value="Friday"> Friday</label>
+          <label><input type="checkbox" name="days[]" value="Saturday"> Saturday</label>
+          <label><input type="checkbox" name="days[]" value="Sunday"> Sunday</label>
+        </div>
+
+        <label for="hours">Preferred Time of Day*</label>
+        <select id="hours" name="hours" required>
+          <option value="">--Select--</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+        </select>
+      </fieldset>
+
+      <!-- Experience -->
+      <fieldset>
+        <legend>Experience with Animals</legend>
+        <label for="experience">Tell us about your experience with animals*</label>
+        <textarea id="experience" name="experience" rows="4" required></textarea>
+
+        <label for="skills">Do you have any specific skills (vet, grooming, training, etc.)?</label>
+        <textarea id="skills" name="skills" rows="3"></textarea>
+      </fieldset>
+
+      <!-- Emergency Contact -->
+      <fieldset>
+        <legend>Emergency Contact</legend>
+        <label for="emergencyName">Full Name*</label>
+        <input type="text" id="emergencyName" name="emergencyName" required>
+
+        <label for="emergencyPhone">Phone Number*</label>
+        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+
+        <label for="relation">Relationship*</label>
+        <input type="text" id="relation" name="relation" required>
+      </fieldset>
+
+      <!-- Additional Questions -->
+      <fieldset>
+        <legend>Additional Information</legend>
+        <label for="allergies">Do you have any allergies we should be aware of?</label>
+        <textarea id="allergies" name="allergies" rows="2"></textarea>
+
+        <label for="whyVolunteer">Why do you want to volunteer with us?*</label>
+        <textarea id="whyVolunteer" name="whyVolunteer" rows="4" required></textarea>
+      </fieldset>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </section>
 </body>
 </html>

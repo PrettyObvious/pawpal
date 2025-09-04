@@ -9,7 +9,6 @@
 /* BODY */
 body {
     position: relative;
-    
 }
 
 body::before {
@@ -107,19 +106,22 @@ nav {
     background-color: darkred;
 }
 
-/* MOBILE MENU */
-nav .fa-bars, nav .fa-times {
+/* MOBILE MENU ICONS */
+nav .fa-bars, 
+nav .fa-times {
     display: none;
     font-size: 22px;
     cursor: pointer;
     color: #0eb7bd;
 }
 
+/* MEDIA QUERIES - MOBILE VIEW */
 @media(max-width: 700px) {
     nav .fa-bars { display: block; }
+
     .nav-links {
         position: absolute;
-        background: #17dfce;
+        background: #0eb7bd;
         height: 100vh;
         width: 200px;
         top: 0;
@@ -129,9 +131,34 @@ nav .fa-bars, nav .fa-times {
         padding-top: 50px;
         transition: 0.5s;
     }
-    .nav-links ul li { display: block; padding: 1rem; }
-    nav .fa-times { display: block; position: absolute; top: 20px; right: 20px; }
+
+    .nav-links ul li { 
+        display: block; 
+        padding: 1rem; 
+    }
+
+    /* Make nav links white on mobile */
+    .nav-links ul li a {
+        color: #fff !important;
+    }
+
+    .nav-links ul li::after {
+        background: #fff; /* underline matches white text */
+    }
+
+    .nav-links ul li a:hover {
+        color: #f2f2f2; /* slightly lighter hover */
+    }
+
+    nav .fa-times { 
+        display: block; 
+        position: absolute; 
+        top: 20px; 
+        right: 20px; 
+        color: #fff; 
+    }
 }
+
 
 /* MAIN CONTENT */
 main {
@@ -281,4 +308,141 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+}
+/* Modal backdrop */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999; /* on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* darker overlay */
+  backdrop-filter: blur(3px); /* subtle blur effect */
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto; /* scroll if content is taller than viewport */
+}
+
+/* Modal content box */
+.modal-content {
+  background: #fff;
+  margin: 8% auto; /* desktop: not vertically centered */
+  padding: 25px 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px; /* desktop default */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto; /* scroll if content overflows */
+  max-height: 90vh; /* desktop can still scroll if extremely tall */
+}
+
+/* Close button */
+.modal-content .donate-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.modal-content .donate-close:hover {
+  color: #e74c3c;
+}
+
+/* Modal heading */
+.modal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* Donation details */
+#donationDetails {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* -------- Responsive adjustments for smaller screens -------- */
+
+/* Small tablets and mobile */
+@media (max-width: 600px) {
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* vertically center modal */
+  }
+
+  .modal-content {
+    max-width: 350px;   /* smaller width */
+    max-height: 80vh;   /* limit height on smaller screens */
+    padding: 20px;
+    margin: 0;          /* remove desktop margin */
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+
+  #donationDetails {
+    font-size: 0.95rem;
+  }
+
+  .modal-content .donate-close {
+    font-size: 20px;
+    top: 12px;
+    right: 15px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .modal-content {
+    max-width: 280px;  /* even smaller */
+    max-height: 75vh;  /* limit height more */
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
+  }
+
+  #donationDetails {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 6px;
+  }
+
+  .modal-content .donate-close {
+    font-size: 18px;
+    top: 8px;
+    right: 10px;
+  }
 }

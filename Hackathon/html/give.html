@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>PawPal - Add Pet</title>
+  <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
+
+  <title>PawPrint - Add Pet</title>
+  <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
+
+</head>
+<body class="add-pet-page">
+  
+  <!-- Top bar with Back button -->
+  <div class="top-bar">
+    <a href="/Hackathon/html/AS_list.html" class="back-btn">Back to Shelter List</a>
+  </div>
+
+  <div class="add-pet-page page-wrapper">
+    <div class="form-frame">
+      <h1>Add a Pet for Adoption</h1>
+      <form id="petForm" enctype="multipart/form-data">
+        <div class="form-content">
+          <!-- Left column: form fields -->
+          <div class="form-fields">
+            <div class="form-row">
+              <div class="form-group">
+              <label for="pet">Name of Pet</label>
+              <input type="text" id="pet" name="pet" placeholder="Enter your pet's name" required />
+            </div>
+
+              <div class="form-group">
+                <label for="animal">Animal Type</label>
+                <input type="text" id="animal" name="animal" placeholder="Dog, Cat..." required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" placeholder="Male, Female..." required />
+              </div>
+              <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" id="breed" name="breed" placeholder="Breed of the animal" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="dob">Date of Birth*</label>
+        <input type="date" id="dob" name="dob" required>
+              </div>
+              <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Short Description</label>
+              <textarea id="description" name="description" placeholder="Enter a short description..." required></textarea>
+            </div>
+
+            <button type="submit">Post Pet</button>
+          </div>
+
+          <!-- Right column: image preview -->
+          <div class="form-image-preview">
+            <div class="image-preview" id="imagePreview">Image Preview</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section class="footer" id="contact">
+    <div class="footer-copyright">
+      &copy; 2025 PawPal. All rights reserved.
+    </div>
+  </section>
+
+  <script src="/js/add_pet.js"></script>
+</body>
+</html>

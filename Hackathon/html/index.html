@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PawPal</title>
   <link rel="stylesheet" href="/Hackathon/css/styles.css" />
+  <link rel="stylesheet" href="/Hackathon/css/emergency.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -34,7 +35,7 @@
     <nav>
       <header>
         <div class="logo-container">
-          <img src="images/logo.png" alt="Logo" class="logo" />
+          <img src="/Hackathon/images/logo.jpg" alt="Logo" class="logo" />
           <h1 class="site-title">PawPal</h1>
         </div>
       </header>
@@ -98,80 +99,7 @@
     </div>
   </section>
 
-  <script>
-    // Slider
-    const slides = document.querySelectorAll(".header1 .slide");
-    let current = 0;
-
-    function nextSlide() {
-      slides[current].classList.remove("active");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("active");
-    }
-
-    setInterval(nextSlide, 5000);
-
-    // Nav menu
-    var navLinks = document.getElementById("navLinks");
-
-    function showMenu() {
-      navLinks.style.right = "0";
-    }
-
-    function hideMenu() {
-      navLinks.style.right = "-200px";
-    }
-
-    // Emergency Modal
-    const modal = document.getElementById("emergencyModal");
-    const btn = document.getElementById("emergencyBtn");
-    const span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = () => modal.style.display = "block";
-    span.onclick = () => modal.style.display = "none";
-    window.onclick = e => { if(e.target == modal) modal.style.display = "none"; }
-
-    const form = document.getElementById("emergencyForm");
-    form.onsubmit = e => {
-      e.preventDefault();
-      alert("Emergency alert sent! (Backend integration needed)");
-      modal.style.display = "none";
-      form.reset();
-    };
-
-    const imageInput = document.getElementById("image");
-const imagePreview = document.getElementById("imagePreview");
-
-imageInput.addEventListener("change", function() {
-  const file = this.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      imagePreview.src = e.target.result;
-      imagePreview.style.display = "block"; // show the image preview
-    }
-    reader.readAsDataURL(file);
-  } else {
-    imagePreview.src = "#";
-    imagePreview.style.display = "none";
-  }
-});
-form.onsubmit = e => {
-  e.preventDefault();
-
-  if (!imageInput.files[0]) {
-    alert("Please upload an image before submitting!");
-    return;
-  }
-
-  // Here you can handle backend integration
-  alert("Emergency alert sent! (Backend integration needed)");
-  modal.style.display = "none";
-  form.reset();
-  imagePreview.style.display = "none";
-};
-
-
-  </script>
+  <script src="/Hackathon/js/index.js"></script>
+  <script src="/Hackathon/js/emergency.js"></script>
 </body>
 </html>
