@@ -1,77 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PawPrint - Shelter Pets</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .pets-page {
-      font-family: 'Poppins', sans-serif;
-      padding: 20px;
-      background: #e6f2ff;
-      min-height: 100vh;
-    }
-
-    .pets-page h1 {
-      text-align: center;
-      color: #0077cc;
-      margin-bottom: 30px;
-    }
-
-    .pets-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .pet-card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease;
-    }
-
-    .pet-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .pet-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .pet-info {
-      padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .pet-info h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #005f99;
-    }
-
-    .pet-info p {
-      margin: 0;
-      font-size: 14px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Shelter - Adopt Section</title>
+    <link rel="stylesheet" href="/Hackathon/css/AS_profile.css">
 </head>
-<body class="pets-page">
-  <h1>Pets from Shelter: <span id="shelterName"></span></h1>
-  <div class="pets-grid" id="petsGrid">
-    <!-- Pet cards will be injected here -->
-  </div>
+<body>
+    <!-- Top bar with shelter name and add button -->
+    <div class="top-bar">
+    <div class="shelter-name">Happy Paws Shelter</div>
+    <div class="button-group">
+        <a href="add_pet.html" class="add-btn">Add</a>
+        <a href="index.html" class="add-btn">LogOut</a>
+    </div>
+</div>
 
-  
+
+    <main class="adopt-section">
+        <h2>Animals Available for Adoption</h2>
+        <div class="card-container">
+            <!-- Example card -->
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage3.jpg" alt="Buddy" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Buddy</h3>
+                    <p><strong>Age:</strong> 2 years</p>
+                    <p><strong>Breed:</strong> Golden Retriever</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Buddy is a playful and friendly dog who loves kids and long walks.</p>
+                    <a href="#" class="remove-btn">Remove</a>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage1.jpg" alt="Luna" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Luna</h3>
+                    <p><strong>Age:</strong> 1 year</p>
+                    <p><strong>Breed:</strong> Siamese</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p class="animal-desc">Luna is a calm and affectionate cat who enjoys sunbathing and cuddles.</p>
+                    <a href="#" class="remove-btn">Remove</a>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage2.jpg" alt="Thumper" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Thumper</h3>
+                    <p><strong>Age:</strong> 6 months</p>
+                    <p><strong>Breed:</strong> Dutch Rabbit</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Thumper is a lively little bunny who loves to hop around and explore.</p>
+                    <a href="#" class="remove-btn">Remove</a>
+                </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+        </div>
+    </main>
 </body>
+<section class="footer" id="contact">
+    <div class="footer-copyright">
+      &copy; 2025 PawPal. All rights reserved.
+    </div>
+  </section>
 </html>
+

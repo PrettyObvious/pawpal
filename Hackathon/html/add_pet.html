@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PawPrint - Add Pet</title>
+  <title>PawPal - Add Pet</title>
   <link rel="stylesheet" href="/Hackathon/css/add_pet.css" />
 </head>
 <body class="add-pet-page">
+  
+  <!-- Top bar with Back button -->
+  <div class="top-bar">
+    <a href="/Hackathon/html/AS_profile.html" class="back-btn">Back to Profile</a>
+  </div>
+
   <div class="add-pet-page page-wrapper">
     <div class="form-frame">
       <h1>Add a Pet for Adoption</h1>
@@ -63,6 +69,11 @@
       </form>
     </div>
   </div>
+  <section class="footer" id="contact">
+    <div class="footer-copyright">
+      &copy; 2025 PawPal. All rights reserved.
+    </div>
+  </section>
 
   <script>
     const fileInput = document.querySelector('#image');

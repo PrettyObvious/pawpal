@@ -42,11 +42,9 @@
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
           <li><a href="index.html">HOME</a></li>
-          <li><a href="adopt.html">ADOPT</a></li>
-          <li><a href="volunteer.html">VOLUNTEER</a></li>
-          <li><a href="donate.html">DONATE</a></li>
+          <li><a href="AS_list.html">EXPLORE</a></li>
           <li>
-            <a href="emergency.html" class="emergency-btn">EMERGENCY</a>
+            <a href="#" id="emergencyBtn" class="emergency-btn">EMERGENCY</a>
           </li>
         </ul>
       </div>
@@ -60,6 +58,40 @@
     </div>
   </section>
 
+  <!-- Emergency Modal -->
+  <div id="emergencyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Report Animal Emergency</h2>
+      <form id="emergencyForm">
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" placeholder="Enter address or coordinates" required>
+
+  <label for="type">Type of Emergency:</label>
+  <select id="type" name="type" required>
+    <option value="">Select...</option>
+    <option value="injured">Injured Animal</option>
+    <option value="lost">Lost Animal</option>
+    <option value="dangerous">Dangerous Situation</option>
+  </select>
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" placeholder="Provide details..." required></textarea>
+
+  <label for="contact">Your Contact:</label>
+  <input type="text" id="contact" name="contact" placeholder="Phone or email" required>
+
+  <label for="image">Upload Image:</label>
+  <input type="file" id="image" name="image" accept="image/*" required>
+
+  <img id="imagePreview" src="#" alt="Image Preview" style="display:none; width: 100px; height: 100px; object-fit: cover; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+  <button type="submit">Send Alert</button>
+</form>
+
+    </div>
+  </div>
+
   <section class="footer" id="contact">
     <div class="footer-copyright">
       &copy; 2025 PawPal. All rights reserved.
@@ -67,6 +99,7 @@
   </section>
 
   <script>
+    // Slider
     const slides = document.querySelectorAll(".header1 .slide");
     let current = 0;
 
@@ -78,6 +111,7 @@
 
     setInterval(nextSlide, 5000);
 
+    // Nav menu
     var navLinks = document.getElementById("navLinks");
 
     function showMenu() {
@@ -87,6 +121,57 @@
     function hideMenu() {
       navLinks.style.right = "-200px";
     }
+
+    // Emergency Modal
+    const modal = document.getElementById("emergencyModal");
+    const btn = document.getElementById("emergencyBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => modal.style.display = "block";
+    span.onclick = () => modal.style.display = "none";
+    window.onclick = e => { if(e.target == modal) modal.style.display = "none"; }
+
+    const form = document.getElementById("emergencyForm");
+    form.onsubmit = e => {
+      e.preventDefault();
+      alert("Emergency alert sent! (Backend integration needed)");
+      modal.style.display = "none";
+      form.reset();
+    };
+
+    const imageInput = document.getElementById("image");
+const imagePreview = document.getElementById("imagePreview");
+
+imageInput.addEventListener("change", function() {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result;
+      imagePreview.style.display = "block"; // show the image preview
+    }
+    reader.readAsDataURL(file);
+  } else {
+    imagePreview.src = "#";
+    imagePreview.style.display = "none";
+  }
+});
+form.onsubmit = e => {
+  e.preventDefault();
+
+  if (!imageInput.files[0]) {
+    alert("Please upload an image before submitting!");
+    return;
+  }
+
+  // Here you can handle backend integration
+  alert("Emergency alert sent! (Backend integration needed)");
+  modal.style.display = "none";
+  form.reset();
+  imagePreview.style.display = "none";
+};
+
+
   </script>
 </body>
 </html>

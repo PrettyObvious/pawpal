@@ -91,7 +91,6 @@ nav {
   background-color: darkred;
   transition: 0.3s ease;
 }
-
 nav .fa {
   display: none;
 }
@@ -132,23 +131,22 @@ nav .fa {
   }
 }
 
-
 footer {
-    background-color: #0eb7bd;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
+  background-color: #0eb7bd;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
 }
 .footer-copyright {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #0eb7bd; 
-    color: #fff;
-    font-size: 14px; 
+  text-align: center;
+  padding: 10px 0;
+  background-color: #0eb7bd; 
+  color: #fff;
+  font-size: 14px; 
 }
 .signup-page * {
   box-sizing: border-box;
@@ -176,25 +174,37 @@ footer {
   flex-wrap: nowrap;
 }
 
-/* Left column: welcome message */
+/* Left column: welcome message with background image */
 .welcome-column {
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 30px;
+  color: #fff;
+  background-image: url('/Hackathon/images/cat_feet.jpg'); /* full left side image */
+  background-size: cover;
+  background-position: 10% 100%;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
   animation: slideIn 1s ease forwards;
+}
+
+/* Optional: text overlay styling for readability */
+.welcome-column h1,
+.welcome-column p {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .welcome-column h1 {
   font-size: 36px;
-  color: #0077cc;
   margin-bottom: 15px;
 }
 
 .welcome-column p {
   font-size: 18px;
-  color: #005f99;
   line-height: 1.5;
+  
 }
 
 /* Slide-in animation */
@@ -322,6 +332,8 @@ button:hover {
     max-width: 500px;
     text-align: center;
     margin-bottom: 20px;
+    background-size: cover;
+    padding: 20px;
   }
 
   .welcome-column h1 {
@@ -337,5 +349,3 @@ button:hover {
     padding: 30px 20px;
   }
 }
-
-

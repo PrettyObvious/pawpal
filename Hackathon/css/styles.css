@@ -3,12 +3,14 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+
 .header1 {
   min-height: 100vh;
   width: 100%;
   position: relative;
   overflow: hidden;
 }
+
 .header1 .slide {
   position: absolute;
   top: 0;
@@ -22,9 +24,11 @@
   transition: opacity 1.5s ease-in-out;
   z-index: -1;
 }
+
 .header1 .slide.active {
   opacity: 1;
 }
+
 nav {
   display: flex;
   padding: 2% 6%;
@@ -33,6 +37,7 @@ nav {
   position: relative;
   z-index: 1;
 }
+
 .logo {
   width: 50px;
   height: auto;
@@ -40,32 +45,38 @@ nav {
   object-fit: cover;
   padding: 30px;
 }
+
 .logo-container {
   display: flex;
   align-items: center;
 }
+
 .site-title {
   margin-left: 15px;
   font-size: 24px;
   color: #fff;
 }
+
 .nav-links {
   flex: 1;
   text-align: right;
   position: relative;
   z-index: 1;
 }
+
 .nav-links ul li {
   list-style: none;
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
+
 .nav-links ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 13px;
 }
+
 .nav-links ul li::after {
   content: "";
   width: 0%;
@@ -75,9 +86,11 @@ nav {
   margin: auto;
   transition: 0.5s;
 }
+
 .nav-links ul li:hover::after {
   width: 100%;
 }
+
 .emergency-btn {
   background-color: red;
   color: white !important;
@@ -87,10 +100,12 @@ nav {
   text-decoration: none;
   display: inline-block;
 }
+
 .emergency-btn:hover {
   background-color: darkred;
   transition: 0.3s ease;
 }
+
 .text-box {
   width: 90%;
   color: #fff;
@@ -101,13 +116,16 @@ nav {
   text-align: center;
   z-index: 1;
 }
+
 .text-box h1 {
   font-size: 62px;
 }
+
 .text-box h2 {
   font-size: 32px;
   margin-top: 10px;
 }
+
 .hero-btn {
   display: inline-block;
   text-decoration: none;
@@ -119,14 +137,17 @@ nav {
   cursor: pointer;
   margin-top: 20px;
 }
+
 .hero-btn:hover {
   border: 1px solid #17dfce;
   background: #17dfce;
   transition: 1s;
 }
+
 nav .fa {
   display: none;
 }
+
 @media (max-width: 700px) {
   .text-box h1 {
     font-size: 20px;
@@ -156,20 +177,185 @@ nav .fa {
     padding: 30px;
   }
 }
+
 footer {
-    background-color: #0eb7bd;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
+  background-color: #0eb7bd;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
 }
+
 .footer-copyright {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #0eb7bd; 
-    color: #fff;
-    font-size: 14px; 
+  text-align: center;
+  padding: 10px 0;
+  background-color: #0eb7bd; 
+  color: #fff;
+  font-size: 14px; 
+}
+
+/* ======================================================
+   Emergency Modal Scoped CSS
+====================================================== */
+#emergencyModal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(255, 0, 0, 0.4);
+  animation: emergencyModalFadeIn 0.3s ease-in-out;
+}
+
+#emergencyModal .modal-content {
+  background-color: #fff3f3;
+  margin: 8% auto; 
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+  border: 2px solid #e74c3c;
+  animation: emergencyModalShake 0.3s ease-in-out;
+}
+
+#emergencyModal .close {
+  color: #e74c3c;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#emergencyModal .close:hover {
+  color: #c0392b;
+}
+
+#emergencyModal form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+#emergencyModal form input, 
+#emergencyModal form select, 
+#emergencyModal form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #e74c3c;
+}
+
+#emergencyModal form textarea {
+  resize: vertical;
+}
+
+#emergencyModal form button {
+  margin-top: 18px;
+  padding: 12px 22px;
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+#emergencyModal form button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+#emergencyModal #imagePreview {
+  display: none;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Emergency Button in Nav (Scoped) */
+#emergencyBtn {
+  padding: 14px 22px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+#emergencyBtn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes emergencyModalFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes emergencyModalShake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive Media Queries for Emergency Modal */
+@media (max-width: 480px) {
+  #emergencyModal .modal-content {
+    width: 95%;
+    padding: 20px;
+    margin: 5% auto;
+  }
+
+  #emergencyModal form input, 
+  #emergencyModal form select, 
+  #emergencyModal form textarea, 
+  #emergencyModal form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #emergencyModal #imagePreview {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  #emergencyModal .modal-content {
+    width: 90%;
+    padding: 22px;
+    margin: 8% auto;
+  }
+
+  #emergencyModal form input, 
+  #emergencyModal form select, 
+  #emergencyModal form textarea, 
+  #emergencyModal form button {
+    font-size: 15px;
+    padding: 9px;
+  }
+
+  #emergencyModal #imagePreview {
+    width: 90px;
+    height: 90px;
+  }
 }

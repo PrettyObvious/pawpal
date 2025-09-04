@@ -1,0 +1,284 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    position: relative;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Hackathon/images/paw-print.jpg'); /* your JPG path */
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.4; /* very light, adjust from 0.05 to 0.3 to taste */
+    z-index: -1; /* behind all content */
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.site-title {
+    margin-left: 15px;
+    font-size: 28px;
+    color: #0eb7bd;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #0eb7bd;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #0eb7bd;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    margin: auto;
+    background: #17dfce;
+    transition: 0.3s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.emergency-btn {
+    background-color: red;
+    color: white !important;
+    padding: 8px 18px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.emergency-btn:hover {
+    background-color: darkred;
+}
+
+/* MOBILE MENU */
+nav .fa-bars, nav .fa-times {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #0eb7bd;
+}
+
+@media(max-width: 700px) {
+    nav .fa-bars { display: block; }
+    .nav-links {
+        position: absolute;
+        background: #17dfce;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        flex-direction: column;
+        text-align: left;
+        padding-top: 50px;
+        transition: 0.5s;
+    }
+    .nav-links ul li { display: block; padding: 1rem; }
+    nav .fa-times { display: block; position: absolute; top: 20px; right: 20px; }
+}
+
+/* MAIN CONTENT */
+main {
+    flex: 1;
+    padding: 2rem 1rem;      /* padding for small margin on sides */
+    max-width: 700px;         /* optional max width for very wide screens */
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* PAGE TITLE */
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* SEARCH BAR */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    border: #333 solid 1px;
+}
+
+.search-container:focus-within {
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+}
+
+.search-button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.search-button:hover {
+    background: #1e4ed8;
+}
+
+.search-button:active {
+    transform: scale(0.97);
+}
+
+/* RESULTS CONTAINER */
+#results {
+    margin-top: 2rem;
+}
+
+/* FULL-WIDTH CARDS */
+.result-card {
+    background: #fff;
+    border-radius: 15px;
+    border: #333 solid 1px;
+    padding: 1rem;
+    margin: 0.5rem 0;          /* vertical spacing only */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.1s ease-in-out;
+    width: 100%;               /* full width of container */
+    box-sizing: border-box;    /* include padding inside width */
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+}
+
+.result-card b {
+    color: #2563eb;
+}
+
+.shelter-address {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+/* CARD BUTTONS */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;       /* wrap if needed on very small screens */
+    gap: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+/* Buttons shrink to text */
+.card-btn {
+    padding: 0.35rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.2s ease;
+    flex: 0 0 auto;        /* shrink to fit content */
+}
+
+/* BUTTON COLORS */
+.adopt-btn { background-color: #2563eb; }
+.adopt-btn:hover { background-color: #1e4ed8; }
+
+.give-btn { background-color: #10b981; }
+.give-btn:hover { background-color: #0f9d70; }
+
+.donate-btn { background-color: #f59e0b; }
+.donate-btn:hover { background-color: #d97706; }
+
+.volunteer-btn { background-color: #ef4444; }
+.volunteer-btn:hover { background-color: #b91c1c; }
+
+/* Responsive fallback for very small screens */
+@media (max-width: 450px) {
+    .card-buttons {
+        justify-content: center;
+        gap: 0.2rem;
+    }
+    .card-btn { font-size: 0.8rem; padding: 0.35rem 0.5rem; }
+}
+
+/* FOOTER */
+footer {
+    background-color: #0eb7bd;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}

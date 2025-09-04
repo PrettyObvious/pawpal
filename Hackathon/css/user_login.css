@@ -132,16 +132,19 @@ nav .fa {
   }
 }
 main {
+  background: linear-gradient(135deg, #cce7ff, #99d6ff);
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
+  padding-bottom: 40px;
 }
 
 .login-content {
+  
   display: flex;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   gap: 30px;
   flex-wrap: wrap;
@@ -155,17 +158,25 @@ main {
   justify-content: center;
   animation: slideIn 1s ease forwards;
 }
+.welcome-column .welcome-img {
+  max-width: 100%;       /* keep it responsive */
+  height: auto;          /* preserve aspect ratio */
+  margin-bottom: 20px;   /* spacing under the image */
+  border-radius: 15px;   /* optional: rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* optional: subtle shadow */
+}
 
 .welcome-column h1 {
   font-size: 36px;
-  color: #0077cc;
+  color: #57072d;
   margin-bottom: 15px;
 }
 
 .welcome-column p {
   font-size: 18px;
-  color: #005f99;
+  color: #57072d;
   line-height: 1.5;
+  padding-bottom: 20px;
 }
 
 /* Slide in animation */

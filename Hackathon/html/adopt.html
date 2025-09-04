@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/Hackathon/css/adopt.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Philarite</title>
+    <title>PawPal</title>
 </head>
 <body>
     <nav>
@@ -21,90 +21,98 @@
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i> 
             <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="adopt.html">ADOPT</a></li>
-                    <li><a href="volunteer.html">VOLUNTEER</a></li>
-                    <li><a href="donate.html">DONATE</a></li>
-                    <li><a  href="emergency.html" class="emergency-btn">EMERGENCY</a></li>
-                    
-                </ul>
+                <li><a href="index.html">HOME</a></li>
+          <li><a href="AS_list.html">EXPLORE</a></li>
+          <li>
+            <a href="emergency.html" class="emergency-btn">EMERGENCY</a>
+          </li>
+            </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
-    <br>
-    <br>
-    <br>
-    <body class="signup-page">
-  <div class="signup-page page-wrapper">
-    <div class="signup-content">
-      <!-- Left column: welcome message -->
-      <div class="welcome-column">
-        <h1>Welcome to PawPal!</h1>
-        <p>Join our community and help pets find loving homes. Sign up now and start your journey with us!</p>
-      </div>
 
-      <!-- Right column: signup form -->
-      <div class="form-column">
-        <div class="form-frame">
-          <h1>Create Your Account</h1>
-          <form id="signupForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-              </div>
+    <main class="adopt-section">
+        <h2>Animals Available for Adoption</h2>
+        <div class="card-container">
+            <!-- Example card -->
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage3.jpg" alt="Buddy" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Buddy</h3>
+                    <p><strong>Age:</strong> 2 years</p>
+                    <p><strong>Breed:</strong> Golden Retriever</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Buddy is a playful and friendly dog who loves kids and long walks.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-              </div>
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage1.jpg" alt="Luna" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Luna</h3>
+                    <p><strong>Age:</strong> 1 year</p>
+                    <p><strong>Breed:</strong> Siamese</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p class="animal-desc">Luna is a calm and affectionate cat who enjoys sunbathing and cuddles.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-              </div>
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage2.jpg" alt="Thumper" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Thumper</h3>
+                    <p><strong>Age:</strong> 6 months</p>
+                    <p><strong>Breed:</strong> Dutch Rabbit</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Thumper is a lively little bunny who loves to hop around and explore.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter a password" required>
-              </div>
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage1.jpg" alt="Thumper" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Thumper</h3>
+                    <p><strong>Age:</strong> 6 months</p>
+                    <p><strong>Breed:</strong> Dutch Rabbit</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Thumper is a lively little bunny who loves to hop around and explore.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
             </div>
-
-            <button type="submit">Sign Up</button>
-            <p class="login-link">
-              Already have an account? <a href="/Hackathon/html/user_login.html">Login now</a>
-            </p>
-          </form>
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage2.jpg" alt="Thumper" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Thumper</h3>
+                    <p><strong>Age:</strong> 6 months</p>
+                    <p><strong>Breed:</strong> Dutch Rabbit</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Thumper is a lively little bunny who loves to hop around and explore.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
+            </div>
+            <div class="animal-card">
+                <img src="/Hackathon/images/headerimage3.jpg" alt="Thumper" class="animal-image">
+                <div class="animal-info">
+                    <h3 class="animal-name">Thumper</h3>
+                    <p><strong>Age:</strong> 6 months</p>
+                    <p><strong>Breed:</strong> Dutch Rabbit</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p class="animal-desc">Thumper is a lively little bunny who loves to hop around and explore.</p>
+                    <a href="adopt-form.html" class="adopt-btn">Adopt</a>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
         </div>
-      </div>
+    </main>
+
+    <div class="footer-copyright">
+        &copy; 2025 PawPal. All rights reserved.
     </div>
-   
-  </div>
-</body>
-    
-    
-    
-        <div class="footer-copyright">
-            &copy; 2025 PawPal. All rights reserved.
-        </div>
-    </section>
 
     <script>
         var navLinks = document.getElementById("navLinks");
-
-        function showMenu() {
-            navLinks.style.right = "0";
-        }
-
-        function hideMenu() {
-            navLinks.style.right = "-200px";
-        }
+        function showMenu() { navLinks.style.right = "0"; }
+        function hideMenu() { navLinks.style.right = "-200px"; }
     </script>
 </body>
 </html>

@@ -112,21 +112,19 @@ nav .fa {
 }
 
 
-footer {
-    background-color: #0eb7bd;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
+.footer {
+  background-color: #f1f1f1;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
+
 .footer-copyright {
     text-align: center;
     padding: 10px 0;
-    background-color: #0eb7bd; 
-    color: #fff;
+    background-color: #f1f1f1; 
+    color: #555;
     font-size: 14px; 
 }
 /* General reset */
@@ -148,12 +146,13 @@ footer {
 
 .login-content {
   display: flex;
-  max-width: 900px;
+  max-width: 1400px;
   width: 100%;
   gap: 30px;
   flex-wrap: wrap;
 }
 
+/* Left column: welcome */
 /* Left column: welcome */
 .welcome-column {
   flex: 1 1 45%;
@@ -161,19 +160,36 @@ footer {
   flex-direction: column;
   justify-content: center;
   animation: slideIn 1s ease forwards;
+
+  /* Background image */
+  background: url("/Hackathon/images/dog_frame2.jpg") no-repeat center center/cover;
+  border-radius: 20px;
+  padding: 60px;
+  color: rgb(7, 7, 7);
+  position: relative;
 }
 
-.welcome-column h1 {
-  font-size: 36px;
-  color: #0077cc;
-  margin-bottom: 15px;
+/* Optional overlay to make text readable */
+.welcome-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 20px;
+  z-index: 1;
 }
 
+/* Slide-in text stays above overlay */
+.welcome-column h1,
 .welcome-column p {
-  font-size: 18px;
-  color: #005f99;
-  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start;
 }
+
 
 /* Slide in animation */
 @keyframes slideIn {

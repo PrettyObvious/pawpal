@@ -14,6 +14,34 @@
   align-items: center;
   min-height: 100vh;
   padding: 15px;
+  flex-direction: column; /* Ensure top bar + form stack vertically */
+}
+
+/* Top bar with Back button */
+.add-pet-page .top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 5%;
+  margin-bottom: 20px;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.add-pet-page .back-btn {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.add-pet-page .back-btn:hover {
+  background-color: #005f99;
+  transform: translateY(-2px);
 }
 
 .add-pet-page .form-frame {
@@ -152,5 +180,19 @@
   .add-pet-page .form-image-preview {
     flex: 1 1 100%;
   }
-}
 
+  .add-pet-page .top-bar {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+footer {
+    background-color: #0eb7bd;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}

@@ -1,10 +1,18 @@
-
 /* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background-color: #f0f0f0;
 }
 
 /* Logo and title */
@@ -37,76 +45,80 @@
     }
 }
 
-/* Navbar */
+/* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5% 6%;
+    padding: 1rem 5%;
     background-color: #0eb7bd;
     border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* NAV LINKS */
 .nav-links {
-    flex: 1;
+    display: flex;
+    align-items: center;
     text-align: right;
 }
 
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    position: relative;
+    padding: 0.5rem 1rem;
 }
 
 .nav-links ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    display: inline-block;
-    padding: 6px 12px;
-    transition: background 0.5s;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.nav-links ul li:hover a {
-    background: #057c8b;
+.nav-links ul li a:hover {
     color: #fff;
-    border-radius: 4px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    display: block;
+    margin: auto;
+    background: #17dfce;
+    transition: 0.3s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
 }
 
 /* Emergency button */
 .emergency-btn {
     background-color: red;
     color: white !important;
-    padding: 10px 20px;
+    padding: 8px 18px;
     border-radius: 15px;
     font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.emergency-btn:focus,
-.emergency-btn:active,
-.emergency-btn:visited {
-    color: white;
-    text-decoration: none;
-    outline: none;
-    box-shadow: none;
 }
 
 .emergency-btn:hover {
     background-color: darkred;
-    transition: 0.3s ease;
 }
 
-/* Mobile nav */
-nav .fa {
+/* MOBILE MENU */
+nav .fa-bars, nav .fa-times {
     display: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
 }
 
-@media (max-width: 700px) {
-    .nav-links ul li {
-        display: block;
-    }
+@media(max-width: 700px) {
+    nav .fa-bars { display: block; }
     .nav-links {
         position: absolute;
         background: #0eb7bd;
@@ -114,64 +126,116 @@ nav .fa {
         width: 200px;
         top: 0;
         right: -200px;
+        flex-direction: column;
         text-align: left;
-        z-index: 2;
-        transition: 1s;
+        padding-top: 50px;
+        transition: 0.5s;
     }
-    nav .fa {
-        display: block;
-        color: #fff;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
-    .nav-links ul {
-        padding: 30px;
-    }
+    .nav-links ul li { display: block; padding: 1rem; }
+    nav .fa-times { display: block; position: absolute; top: 20px; right: 20px; }
 }
 
-/* Page body */
-body {
-    background-color: #f0f0f0;
+/* Cat background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/Hackathon/images/cat_background.png'); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* Container for the signup blocks */
+/* Floating pet emojis */
+body::after {
+    content: "🐶 🐱 🐰";
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 2rem;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for signup blocks */
 .container {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin: 80px auto;
-    max-width: 800px;
+    max-width: 900px;
     flex-wrap: wrap;
 }
 
 /* Individual signup block */
 .block {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background-color: #fff;
     border: 2px solid #ccc;
-    border-radius: 12px;
+    border-radius: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
+    position: relative;
+    padding: 20px;
 }
 
 .block:hover {
-    background-color: #e0ffe0;
-    transform: scale(1.05);
+    background-color: #e0fff0;
+    transform: scale(1.07);
     border-color: #4caf50;
+}
+
+.block img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
 
 .block h2 {
     margin: 0;
+    font-size: 20px;
     color: #333;
+    transition: color 0.3s ease;
+}
+
+.block:hover h2 {
+    color: #0eb7bd;
+}
+
+/* Paw emoji on hover */
+.block::after {
+    content: "🐾";
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 18px;
+    opacity: 0.5;
+    transition: transform 0.3s;
+}
+
+.block:hover::after {
+    transform: scale(1.3);
 }
 
 /* Back button */
@@ -182,26 +246,27 @@ body {
 
 .back-btn-container .hero-btn {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: #555;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #17dfce, #0eb7bd);
     color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 .back-btn-container .hero-btn:hover {
-    background-color: #333;
+    background: linear-gradient(45deg, #0eb7bd, #17dfce);
+    transform: translateY(-3px);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background-color: #0eb7bd;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 40px;
+    margin-top: auto;
 }
 
 .footer-copyright {
@@ -210,4 +275,17 @@ footer {
     background-color: #0eb7bd;
     color: #fff;
     font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media(max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .block {
+        width: 180px;
+        height: 180px;
+    }
 }

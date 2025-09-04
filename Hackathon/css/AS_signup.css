@@ -111,93 +111,127 @@ nav .fa {
   }
 }
 
-
-footer {
-    background-color: #0eb7bd;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20px;
+/* Slide in animation */
+@keyframes slideIn {
+  0% { transform: translateX(-50px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
+
+
+  .footer {
+  background-color: #f1f1f1;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
 .footer-copyright {
     text-align: center;
     padding: 10px 0;
-    background-color: #0eb7bd; 
-    color: #fff;
+    background-color: #f1f1f1; 
+    color: #555;
     font-size: 14px; 
 }
-/* General reset */
-.signup-page * {
-  box-sizing: border-box;
+/* Reset & global styles */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-/* Page background */
 .signup-page {
   background: linear-gradient(135deg, #cce7ff, #99d6ff);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 
-/* Container for welcome + form columns */
+/* Main container: left + right */
 .signup-content {
   display: flex;
-  max-width: 900px;
+  max-width: 1400px;
   width: 100%;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: nowrap;
 }
 
-/* Welcome column */
+/* Left column: welcome message */
 .welcome-column {
-  flex: 1 1 45%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  animation: slideIn 1s ease forwards;
+  justify-content: flex-start;
+
+  /* Reduced padding */
+  padding: 250px 20px 20px;
+
+  border-radius: 20px;
+
+  /* Background image */
+  background: url("/Hackathon/images/cute_pets.jpg") no-repeat center center/contain;
+  position: relative;
+  color: white;
 }
 
-.welcome-column h1 {
+/* Optional: overlay stays the same */
+.welcome-column::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.welcome-column h1{
+  position: relative;
+  z-index: 2;
   font-size: 36px;
-  color: #0077cc;
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* slightly reduced margin */
+  font-size: 40px;
+  color: #57072d;
+
+  /* Slide-in animation */
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 .welcome-column p {
-  font-size: 18px;
-  color: #005f99;
-  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+  margin-left: 5px; /* smaller margin for text */
+  font-size: 30px;
+  color: #57072d;
+
+  /* Slide-in animation */
+  animation: slideIn 1s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
 }
 
-/* Slide-in animation */
-@keyframes slideIn {
-  0% { transform: translateX(-50px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-/* Form column */
+/* Right column: form */
 .form-column {
-  flex: 1 1 50%;
+  flex: 0 0 50%; /* 70% width */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Form frame */
 .form-frame {
   background: #fff;
-  padding: 40px 50px;
+  padding: 50px 40px;
   border-radius: 25px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.25);
   width: 100%;
+  
 }
 
 /* Form heading */
@@ -205,18 +239,18 @@ footer {
   text-align: center;
   color: #0077cc;
   font-size: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
-/* Form rows and inputs */
+/* Form rows: two-column layout for large screens */
 .form-row {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
-.form-group {
+.form-row .form-group {
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
 }
@@ -231,43 +265,52 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="password"] {
+input[type="password"],
+textarea {
   padding: 14px 16px;
   border-radius: 14px;
   border: 2px solid #d0e6f7;
   font-size: 16px;
   background: #e6f2ff;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border-color: #0077cc;
-  box-shadow: 0 0 10px rgba(0,119,204,0.3);
+  box-shadow: 0 0 12px rgba(0,119,204,0.3);
   outline: none;
 }
 
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
 /* Signup button */
+
 button {
-  padding: 22px 70px;
-  border-radius: 30px;
+  padding: 14px 40px;  /* smaller padding */
+  border-radius: 25px; /* slightly less rounded */
   background: #0077cc;
   color: #fff;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 18px;     /* slightly smaller font */
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 25px;
-  width: 135px;
+  margin-top: 20px;
+  width: auto;         /* auto width instead of fixed */
   align-self: center;
 }
 
 button:hover {
   background: #005f99;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-/* Login link */
+
 .login-link {
   text-align: center;
   margin-top: 15px;
@@ -287,13 +330,11 @@ button:hover {
   text-decoration: none;
 }
 
-/* Responsive: stack vertically on small screens */
-@media (max-width: 800px) {
+/* Responsive: stack everything vertically on smaller screens */
+@media (max-width: 900px) {
   .signup-content {
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 25px;
   }
 
   .welcome-column,
@@ -301,7 +342,14 @@ button:hover {
     flex: 1 1 100%;
     max-width: 500px;
     text-align: center;
-    margin-bottom: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-frame {
+    padding: 35px 25px;
   }
 
   .welcome-column h1 {
@@ -311,9 +359,5 @@ button:hover {
   .welcome-column p {
     font-size: 16px;
     line-height: 1.4;
-  }
-
-  .form-frame {
-    padding: 30px 20px;
   }
 }
